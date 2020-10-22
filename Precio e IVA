@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>IVA</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<script>
+		//Se crea una función para calcular el IVA de un producto
+        function masIVA(precio, iva) {
+        iva = iva || 21
+        var conIVA = (precio + precio * iva / 100)
+        return conIVA
+        }    
+        
+        //Se pide un precio y un IVA
+        var precio = Number(prompt("Por favor, ingrese el precio de un producto"));
+        var iva = Number(prompt("Ahora, ingrese el IVA del producto si es que lo tiene"));
+        
+        //Se crea un bucle if en caso de que el IVA sea menor que 0
+        if (iva < 0) {
+        var resultado = masIVA(precio, iva);
+        } else {
+        var resultado = masIVA(precio);
+        }
+        
+        //Se devuelve el resultado y finaliza el programa
+        document.write("Precio sin IVA: " + precio);
+        document.write("Precio con IVA: " + resultado);
+	</script>
+</body>
+</html>
